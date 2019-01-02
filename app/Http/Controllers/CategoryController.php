@@ -126,4 +126,9 @@ class CategoryController extends Controller
         $delete_category = \App\Category::onlyTrashed()->paginate(10);
         return view('categories.trash', ['categories'=>$delete_category]);
     }
+
+    public function restore($id)
+    {
+        
+    }
 }
