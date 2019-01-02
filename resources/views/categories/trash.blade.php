@@ -1,6 +1,6 @@
 @extends('layouts.global')
 @section('pageTitle')
-    Trash Categories
+    Trashed Categories
 @endsection
 @section('content')
     <div class="row">
@@ -37,10 +37,10 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Nama</th>
-                            <th>Slug</th>
-                            <th>Image</th>
-                            <th>Action</th>
+                            <th><b>Nama</b></th>
+                            <th><b>Slug</b></th>
+                            <th><b>Image</b></th>
+                            <th><b>Action</b></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,10 +48,22 @@
                         <tr>
                             <td>{{$category->name}}</td>
                             <td>{{$category->slug}}</td>
-                            
+                            <td>
+                                @if ($category->image)
+                                    <img src="{{asset('storage/' . $category->image)}}" width="50px">
+                                @endif
+                            </td>
+                            <td>[TODO: action]</td>
                         </tr>
                         @endforeach
                     </tbody>
+                    <tfoot>
+                        <tr>
+                        <td colSpan="10">
+                            {{$categories->appends(Request::all())->links()}}
+                        </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </div>
