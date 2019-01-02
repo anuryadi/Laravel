@@ -37,10 +37,6 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th colspan="4">Data</th>
-                        </tr>
-                            
-                        <tr>
                             <th>Nama</th>
                             <th>Slug</th>
                             <th>Image</th>
