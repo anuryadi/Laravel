@@ -33,7 +33,7 @@
         <hr class="my-3">
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -53,7 +53,9 @@
                                     <img src="{{asset('storage/' . $category->image)}}" width="50px">
                                 @endif
                             </td>
-                            <td>[TODO: action]</td>
+                            <td>
+                                <a href="{{route('categories.restore', ['id'=> $category->id])}}" class="btn btn-primary">Restore</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

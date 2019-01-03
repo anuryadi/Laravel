@@ -129,6 +129,12 @@ class CategoryController extends Controller
 
     public function restore($id)
     {
-        
+        $category = \App\Category::withTrashed()->findOrFail($id);
+        if ($category->trashed()) {
+            $category->restore();
+        } else {
+            return redirect()->route('categories.index')->with('status', 'Category is not in trash');
+        }
+        return redirect()->route('categories.index')->with('status', 'Category successfully restored');
     }
 }
