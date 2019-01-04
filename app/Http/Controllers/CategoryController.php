@@ -137,4 +137,11 @@ class CategoryController extends Controller
         }
         return redirect()->route('categories.index')->with('status', 'Category successfully restored');
     }
+
+    public function updateUser(Request $request)
+    {
+        User::find($request->pk)->update([$request->name => $request->value]);
+        return response()->json(['success'=>'done']);
+
+    }
 }

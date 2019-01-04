@@ -46,7 +46,7 @@
                     <tbody>
                         @foreach ($categories as $category)
                         <tr>
-                            <td>{{$category->name}}</td>
+                            <td><a href="" class="update" data-name="name" data-type="text" data-pk="{{ $category->id }}" data-title="Enter name">{{$category->name}}</a></td>
                             <td>{{$category->slug}}</td>
                             <td>
                                 @if ($category->image)
@@ -69,5 +69,18 @@
                 </table>
             </div>
         </div>
-   
+        <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.update').editable({
+                   url: '/update-user',
+                   type: 'text',
+                   pk: 1,
+                   name: 'name',
+                   title: 'Enter name'
+            });
+        </script>
 @endsection
