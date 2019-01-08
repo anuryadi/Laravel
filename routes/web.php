@@ -26,3 +26,5 @@ Route::get('/categories/trash','CategoryController@trash')->name('categories.tra
 Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('categories.restore');
 
 Route::resource('categories', 'CategoryController');
+
+Route::resource('books', 'BookController');
