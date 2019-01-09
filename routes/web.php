@@ -28,3 +28,5 @@ Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('cate
 Route::resource('categories', 'CategoryController');
 
 Route::resource('books', 'BookController');
+
+Route::get('/ajax/categories/search','CategoryController@ajaxSearch');
