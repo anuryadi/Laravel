@@ -1,5 +1,8 @@
 @extends('layouts.global')
 @section('pageTitle') Category list @endsection
+@section('category')
+    active
+@endsection
 @section('content')
 <div class="row">
         <div class="col-md-6">

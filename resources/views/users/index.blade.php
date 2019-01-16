@@ -2,6 +2,9 @@
 @section('title')
     List
 @endsection
+@section('users')
+    active
+@endsection
 @section('pageTitle')
     User List
 @endsection

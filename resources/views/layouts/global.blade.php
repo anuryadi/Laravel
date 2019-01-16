@@ -70,17 +70,27 @@ margin-bottom: 2rem;
     <div class="polished-sidebar bg-light col-12 col-md-3 col-lg-2 p-0 collapse d-md-inline" id="sidebar-nav">
     <ul class="polished-sidebar-menu ml-0 pt-4 p-0 d-md-block">
     <input class="border-dark form-control d-block d-md-none mb-4" type="text" placeholder="Search" aria-label="Search" />
-    <li><a href="/home"><span class="oi oi-home"></span> Home</a></li>
-    <li>
+    <li class="@yield('home')">
+        <a href="/home">
+            <span class="oi oi-home"></span> Home
+        </a>
+    </li>
+    <li class="@yield('users')">
         <a href="{{route('users.index')}}">
             <span class="oi oi-people"></span> Manage Users
         </a>
     </li>
-    <li>
+    <li class="@yield('category')">
             <a href="{{route('categories.index')}}">
                 <span class="oi oi-spreadsheet"></span> Manage Categories
             </a>
-        </li>
+    </li>
+    <li class="@yield('book')">
+        <a href="{{route('books.index')}}">
+            <span class="oi oi-book"></span>
+            Manage Books
+        </a>
+    </li>
 <div class="d-block d-md-none">
 <div class="dropdown-divider"></div>
 <li><a href="#"> Profile</a></li>
